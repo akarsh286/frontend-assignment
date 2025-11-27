@@ -1,43 +1,22 @@
 import { useSelector, useDispatch } from "react-redux";
 import { switchRole, setUser } from "../redux/slices/roleSlice";
-import { useEffect } from "react";
 
 export default function Header() {
   const dispatch = useDispatch();
   const { currentRole, currentUser } = useSelector((state) => state.role);
   const members = useSelector((state) => state.members);
 
-  // ---------- Theme Toggle Function ----------
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem(
-      "theme",
-      document.documentElement.classList.contains("dark") ? "dark" : "light"
-    );
-  };
-
-  // ---------- Load Theme on Refresh ----------
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
   return (
-    <header className="w-full bg-white dark:bg-[#1C1C1C] border-b shadow-md py-4 px-6 flex justify-between items-center">
-
-      
-      {/* Logo / Title */}
-      <h1 className="text-xl font-bold text-gray-800 dark:text-white">
-        Team Pulse Dashboard
+    <header className="w-full bg-white border-b shadow-md py-4 px-6 flex justify-between items-center">
+      <h1 className="text-xl font-bold text-gray-800">
+        🎨 Team Pulse Dashboard
       </h1>
 
       <div className="flex items-center gap-4">
 
-        {/* User Dropdown */}
+        {/* User Switch */}
         <select
-          className="border px-3 py-2 rounded-md bg-gray-50 dark:bg-[#2B2B2B] dark:text-white cursor-pointer"
+          className="border px-3 py-2 rounded-md bg-gray-50 cursor-pointer"
           value={currentUser}
           onChange={(e) => dispatch(setUser(e.target.value))}
         >
@@ -50,7 +29,7 @@ export default function Header() {
 
         {/* Role Badge */}
         <span
-          className={`px-3 py-1 rounded-full text-sm font-semibold transition 
+          className={`px-3 py-1 rounded-full text-sm font-semibold 
             ${
               currentRole === "lead"
                 ? "bg-purple-600 text-white"
@@ -60,20 +39,12 @@ export default function Header() {
           {currentRole === "lead" ? "Team Lead" : "Member"}
         </span>
 
-        {/* Switch Role Button */}
+        {/* Switch role */}
         <button
           onClick={() => dispatch(switchRole())}
           className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition"
         >
           Switch Role
-        </button>
-
-        {/* Theme Toggle Button */}
-        <button
-          onClick={toggleTheme}
-          className="px-3 py-2 rounded bg-gray-800 text-white dark:bg-gray-600 hover:opacity-80 transition"
-        >
-          🌙
         </button>
       </div>
     </header>
