@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3f4f6;
+  --text: #111;
+}
+
+.dark {
+  --bg: #111;
+  --text: #fff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* Smooth UI interaction */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Nice scrollbar for dashboard vibe */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 10px;
+}
+
