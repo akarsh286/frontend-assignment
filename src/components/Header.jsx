@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 import { useSelector, useDispatch } from "react-redux";
 import { switchRole, setUser } from "../redux/slices/roleSlice";
 

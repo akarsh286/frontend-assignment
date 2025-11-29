@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const roleSlice = createSlice({

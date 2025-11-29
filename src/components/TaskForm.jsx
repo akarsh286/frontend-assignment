@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { assignTask } from "../redux/slices/membersSlice";

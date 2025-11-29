@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 import StatusChart from "./components/StatusChart";
 import './App.css'
 import Header from "./components/Header";

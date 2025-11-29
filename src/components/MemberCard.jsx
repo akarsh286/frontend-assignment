@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 export default function MemberCard({ member }) {
   const getStatusColor = (status) => {
     switch (status) {

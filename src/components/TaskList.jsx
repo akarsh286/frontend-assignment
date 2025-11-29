@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 import { useDispatch, useSelector } from "react-redux";
 import { updateTaskProgress } from "../redux/slices/membersSlice";
 

@@ -1,3 +1,6 @@
+// Author: Suraj Singh
+// Project: Frontend Assignment
+
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import MemberCard from "./MemberCard";
